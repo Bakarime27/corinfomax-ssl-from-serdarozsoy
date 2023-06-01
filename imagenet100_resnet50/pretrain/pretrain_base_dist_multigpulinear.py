@@ -1,10 +1,10 @@
 import torch
 from tqdm import tqdm
-from loss import invariance_loss
+from pretrain.loss import invariance_loss
 import numpy as np
 
 import torch.distributed as dist
-from metrics import correct_top_k
+from pretrain.metrics import correct_top_k
 import torch.nn as nn
 import torch.nn.functional as F
 

@@ -1,8 +1,8 @@
 import torch
 from tqdm import tqdm
-from metrics import correct_top_k
+from pretrain.metrics import correct_top_k
 import torch.nn.functional as F
-from distributed import get_world_size
+from pretrain.distributed import get_world_size
 
 def linear_test(net, data_loader, epoch):
     # evaluate model:

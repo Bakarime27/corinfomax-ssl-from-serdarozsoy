@@ -1,6 +1,6 @@
 import torch
 from tqdm import tqdm
-from metrics import correct_top_k
+from  linear.metrics import correct_top_k
 import torch.nn.functional as F
 
 def linear_test(net, data_loader, epoch):

@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision.models.resnet import resnet18, resnet50
-import dbn 
+import pretrain.dbn 
 
 class LdmiModel(nn.Module):
     def __init__(self, args):

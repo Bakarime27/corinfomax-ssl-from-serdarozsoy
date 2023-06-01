@@ -3,27 +3,27 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from loss import CovarianceLossv2 as CovarianceLoss
-from loss import invariance_loss
+from pretrain.loss import CovarianceLossv2 as CovarianceLoss
+from pretrain.loss import invariance_loss
 
-from model_base_resnet import CovModel6 as CovModel, LinModel
-from metrics import correct_top_k, grad_norm
+from pretrain.model_base_resnet import CovModel6 as CovModel, LinModel
+from pretrain.metrics import correct_top_k, grad_norm
 
-from pretrain_base_dist_multigpulinear import pretrain_cov_dist, Covdet
-from linear_base2 import linear_train, linear_test
-from lin_classifier import LinClassifier
-import parsing_file_dist as parsing_file
-import data_utils_dist as data_utils
-import optim_utils3 as optim_utils
-import save_utils_con_multi as save_utils
-import save_utils_linear 
+from pretrain.pretrain_base_dist_multigpulinear import pretrain_cov_dist, Covdet
+from pretrain.linear_base2 import linear_train, linear_test
+from pretrain.lin_classifier import LinClassifier
+import pretrain.parsing_file_dist as parsing_file
+import pretrain.data_utils_dist as data_utils
+import pretrain.optim_utils3 as optim_utils
+import pretrain.save_utils_con_multi as save_utils
+import pretrain.save_utils_linear 
 
 import copy
 import numpy as np
 import random
 import os
 
-from distributed import init_distributed_mode
+from pretrain.distributed import init_distributed_mode
 
 from torch.nn.parallel import DistributedDataParallel as DDP
 import torch.distributed as dist
@@ -167,10 +167,10 @@ def set_seed(seed):
     os.environ['PYTHONHASHSEED'] = str(seed)
 
 
-if __name__ == '__main__':
+""" if __name__ == '__main__':
     parser = parsing_file.create_parser()
     arguments = parser.parse_args()
 
     arguments.lin_epochs = arguments.epochs
-    train_test(arguments)
+    train_test(arguments) """
 

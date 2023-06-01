@@ -1,6 +1,6 @@
 import torch
 import torchvision
-import transform_utils3 as utils
+import pretrain.transform_utils3 as utils
 import random
 
 

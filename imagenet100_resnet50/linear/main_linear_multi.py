@@ -1,23 +1,23 @@
 import torch
 from torch.utils.data import DataLoader
 
-from loss import CovarianceLoss
+from  linear.loss import CovarianceLoss
 
-from model_base_resnet import LinModel
-from metrics import correct_top_k, grad_norm
+from  linear.model_base_resnet import LinModel
+from  linear.metrics import correct_top_k, grad_norm
 
-from linear_base_dist import linear_train, linear_test
-from lin_classifier import LinClassifier
-import parsing_file_dist as parsing_file
-import data_utils_dist as data_utils
-import optim_utils
-import save_utils_linear as save_utils
+from  linear.linear_base_dist import linear_train, linear_test
+from  linear.lin_classifier import LinClassifier
+import  linear.parsing_file_dist as parsing_file
+import  linear.data_utils_dist as data_utils
+import  linear.optim_utils
+import  linear.save_utils_linear as save_utils
 
 import numpy as np
 import random
 import os
 
-from distributed import init_distributed_mode
+from  linear.distributed import init_distributed_mode
 from torch.nn.parallel import DistributedDataParallel as DDP
 import torch.distributed as dist
 
